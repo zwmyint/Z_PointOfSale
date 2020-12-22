@@ -1,0 +1,1 @@
+metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string="data source=MAXIMUS-XI\SQLEXPRESS;initial catalog=POS_Tutorial;integrated security=False;persist security info=True;user id=sa;password=***********;MultipleActiveResultSets=True;App=EntityFramework"
