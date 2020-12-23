@@ -26,5 +26,18 @@ namespace PointOfSale.Controllers
         {
             return View();
         }
+
+        // GET: AddOn
+        public ActionResult Page404()
+        {
+            return View();
+        }
+
+
+        // GET: AddOn
+        public ActionResult PageBlank()
+        {
+            return View();
+        }
     }
 }

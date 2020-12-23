@@ -2097,6 +2097,8 @@
     <Content Include="Views\Home\TestPage2.cshtml" />
     <Content Include="Views\AddOn\PageCharts.cshtml" />
     <Content Include="Views\AddOn\PageTables.cshtml" />
+    <Content Include="Views\AddOn\Page404.cshtml" />
+    <Content Include="Views\AddOn\PageBlank.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
