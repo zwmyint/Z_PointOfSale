@@ -48,6 +48,13 @@ namespace PointOfSale.Controllers
             return Json(isLogged, JsonRequestBehavior.AllowGet);
         }
 
+
+        public ActionResult TestPage()
+        {
+            return View();
+        }
+
+
         [AuthorizationFilter]
         public ActionResult UserCreate()
         {
