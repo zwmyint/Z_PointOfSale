@@ -75,6 +75,7 @@
 </div>
 
 <script>
+
     $(function () {
         GetAllUser();
     });
@@ -122,7 +123,11 @@
                 var tdContent = '';
                 for(var i = 0; i < data.length; i++)
                 {
-                    tdContent += '<tr><td>' + data[i].Username + '</td><td>' + data[i].Role + '</td>' + '<td>' + data[i].Status + '</td>' + '<td><a href="#" onclick="Edit(' + data[i].UserId + ",'" + data[i].Username + "','" + data[i].Password + "','" + data[i].Role + "'," + data[i].Status + ');">Edit</a></td></tr>'; // if Name is property of your Person object
+					tdContent += '<tr><td>' + data[i].Username + '</td><td>'
+						+ data[i].Role + '</td>' + '<td>' + data[i].Status + '</td>'
+						+ '<td><a href="#" onclick="Edit(' + data[i].UserId + ",'"
+						+ data[i].Username + "','" + data[i].Password + "','"
+						+ data[i].Role + "'," + data[i].Status + ');">Edit</a></td></tr>'; // if Name is property of your Person object
                 }
                 $("#trDiv").append(tdContent);
             },
@@ -130,7 +135,8 @@
                 alert("Error!")
             }
         });
-    }
+	}
+
     function Edit(UserId, Username, Password, Role, Status) {
         $("#exampleInputUserId").val(UserId);
         $("#exampleInputUser").val(Username);
@@ -140,7 +146,8 @@
         $("#status").val(Status);
         $("#exampleInputPassword").hide(); 
         $("#exampleInputPasswordRetype").hide();
-    }
+	}
+
     function Reset() {
         $("#exampleInputUserId").val(null);
         $("#exampleInputUser").val(null);

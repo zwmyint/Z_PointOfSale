@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using PointOfSale.Helper;
 using PointOfSale.Models;
 using System;
@@ -134,11 +135,17 @@ namespace PointOfSale.Controllers
         }
 
         [HttpGet]
-        public JsonResult GetAllGetegory()
+        public JsonResult GetAllCategory()
         {
             POS_TutorialEntities db = new POS_TutorialEntities();
             var dataList = db.Categories.Where(x => x.Status == 1).ToList();
             return Json(dataList, JsonRequestBehavior.AllowGet);
+
+            //string json = JsonConvert.SerializeObject(dataList, Formatting.None);
+            //return Json(json, JsonRequestBehavior.AllowGet);
+
+
+            
         }
 
         public ActionResult Logout()

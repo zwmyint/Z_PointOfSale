@@ -3,10 +3,6 @@
     ViewBag.Title = "Category";
 }
 
-@{
-    ViewBag.Title = "UserCreate";
-}
-
 <div class="col-xl-12 col-md-12 mb-12">
     <div class="card border-left-primary shadow h-100 py-2">
         <div class="card-body">
@@ -24,7 +20,7 @@
                             <input type="text" class="form-control form-control-user" id="categoryName" aria-describedby="emailHelp" placeholder="Category">
                         </div>
                         <div class="form-group col-md-6">
-                            <a href="#" onclick="SaveUser()" class="btn btn-primary btn-sm">
+                            <a href="#" onclick="SaveCategory()" class="btn btn-primary btn-sm">
                                 Save
                             </a>
                         </div>
@@ -63,11 +59,12 @@
 </div>
 
 <script>
+
     $(function () {
-        GetAllGetegory();
+        GetAllCategory();
     });
 
-    function SaveUser() {
+    function SaveCategory() {
         var category = new Object();
         category.CategoryId = $("#categoryId").val();
         category.Name = $("#categoryName").val();
@@ -83,7 +80,7 @@
             data: data,
             success: function (result) {
                 if (result == true) {
-                    GetAllGetegory();
+                    GetAllCategory();
                     Reset();
                     alert("Save Success!");
                 }
@@ -97,34 +94,52 @@
         });
     }
 
-    function GetAllGetegory() {
-        $.ajax({
-            contentType: 'application/json; charset=utf-8',
-            dataType: 'json',
-            type: 'Get',
-            url: "/Home/GetAllGetegory",
-            success: function (data) {
-                $("#trDiv").html('');
-                var tdContent = '';
-                for(var i = 0; i < data.length; i++)
-                {
-                    tdContent += '<tr><td>' + data[i].Name + '</td>' + '<td>' + data[i].Status + '</td>' + '<td><a href="#" onclick="Edit(' + data[i].CategoryId + ",'" + data[i].Name + "'," + data[i].Status + ');">Edit</a></td></tr>'; // if Name is property of your Person object
-                }
-                $("#trDiv").append(tdContent);
-            },
-            error: function () {
-                alert("Error!")
-            }
-        });
-    }
+	function GetAllCategory() {
+		alert("aaa");
+		$.ajax({
+			contentType: 'application/json; charset=utf-8',
+			dataType: 'json',
+			type: 'Get',
+			url: "/Home/GetAllCategory",
+			success: function (result) {
+				alert(result.length);
+			},
+			error: function () {
+				alert("Error!")
+			}
+
+		});
+		/*
+		$.ajax({
+			contentType: 'application/json; charset=utf-8',
+			dataType: 'json',
+			type: 'Get',
+			url: "/Home/GetAllCategory",
+			success: function (data) {
+				$("#trDiv").html('');
+				var tdContent = '';
+				alert(data.length);
+				for (var i = 0; i < data.length; i++) {
+					tdContent += '<tr><td>' + data[i].Name + '</td>' + '<td>' + data[i].Status + '</td>' + '<td><a href="#" onclick="Edit(' + data[i].CategoryId + ",'" + data[i].Name + "'," + data[i].Status + ');">Edit</a></td></tr>'; // if Name is property of your Person object
+				}
+				$("#trDiv").append(tdContent);
+			},
+			error: function () {
+				alert("Error!")
+			}
+		});*/
+	}
+
     function Edit(catId, catName,status) {
         $("#categoryId").val(catId);
         $("#categoryName").val(catName);
         $("#status").val(status);
-    }
+	}
+
     function Reset() {
         $("#categoryId").val(null);
         $("#categoryName").val(null);
         $("#status").val(null);
-    }
+	}
+
 </script>

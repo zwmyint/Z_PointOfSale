@@ -5,10 +5,10 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="a3e3e659c6234fe49a586a8560f2043c" Name="Diagram1">
-        <EntityTypeShape EntityType="POS_TutorialModel.Batch" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="POS_TutorialModel.Category" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="POS_TutorialModel.Product" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="POS_TutorialModel.ProductStock" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="POS_TutorialModel.Batch" Width="1.5" PointX="1.625" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="POS_TutorialModel.Category" Width="1.5" PointX="0.625" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="POS_TutorialModel.Product" Width="1.5" PointX="2.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="POS_TutorialModel.ProductStock" Width="1.5" PointX="4.75" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="POS_TutorialModel.RolePermission" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="POS_TutorialModel.Sale" Width="1.5" PointX="5.75" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="POS_TutorialModel.SalesDetail" Width="1.5" PointX="8" PointY="5.125" IsExpanded="true" />
