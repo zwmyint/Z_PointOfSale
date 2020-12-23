@@ -2099,6 +2099,7 @@
     <Content Include="Views\AddOn\PageTables.cshtml" />
     <Content Include="Views\AddOn\Page404.cshtml" />
     <Content Include="Views\AddOn\PageBlank.cshtml" />
+    <Content Include="Views\Home\Product.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -60,7 +60,7 @@ namespace PointOfSale.Controllers
             return View();
         }
 
-
+        // user start
         [AuthorizationFilter]
         public ActionResult UserCreate()
         {
@@ -103,6 +103,9 @@ namespace PointOfSale.Controllers
             return Json(dataList, JsonRequestBehavior.AllowGet);
         }
 
+        // user end
+
+        // category start
         [AuthorizationFilter]
         public ActionResult Category()
         {
@@ -148,11 +151,62 @@ namespace PointOfSale.Controllers
             
         }
 
+        // category end
+
+
+        // product start
+        public ActionResult Product()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public JsonResult SaveProduct(Product product)
+        {
+            POS_TutorialEntities db = new POS_TutorialEntities();
+            bool isSuccess = true;
+            if (product.ProductId > 0)
+            {
+                db.Entry(product).State = EntityState.Modified;
+            }
+            else
+            {
+                product.Status = 1;
+                product.Name = "aaa";
+                db.Products.Add(product);
+            }
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception)
+            {
+                isSuccess = false;
+            }
+
+            return Json(isSuccess, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public JsonResult GetAllProduct()
+        {
+            POS_TutorialEntities db = new POS_TutorialEntities();
+            var dataList = db.Products.Where(x => x.Status == 1).ToList();
+            return Json(dataList, JsonRequestBehavior.AllowGet);
+        }
+
+        // product end
+
+
         public ActionResult Logout()
         {
             Session["Username"] = null;
             Session["Role"] = null;
             return RedirectToAction("Login");
         }
+
+
+
+
     }
 }

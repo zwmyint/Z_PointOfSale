@@ -1,8 +1,18 @@
 ﻿
 @{
-    ViewBag.Title = "Access Denied";
+	ViewBag.Title = "Access Denied";
 }
 
-<div>&nbsp;<h2>You are not authorized!</h2></div>
+<!-- Begin Page Content -->
+<div class="container-fluid">
+	<!-- 404 Error Text -->
+	<div class="text-center">
+		<div class="error mx-auto" data-text="404">401</div>
+		<p class="lead text-gray-800 mb-5">You are not authorized!</p>
+		<p class="text-gray-500 mb-0">please check your role ...</p>
+		<a href="/Home/Index">&larr; Back to Dashboard</a>
+		@*<div>&nbsp;<h2>You are not authorized!</h2></div>*@
+	</div>
 
-
+</div>
+<!-- /.container-fluid -->
